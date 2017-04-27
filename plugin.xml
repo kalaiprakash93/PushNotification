@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-mpushnotification"
+    version="1.0.0">
+    <name>mPushNotification</name>
+    <description>This plugin establishes the connection to the native interface and performs the requested task.</description>
+    <author>selfservit@gmail.com</author>
+    <keywords>mpushnotification</keywords>
+    <license>Apache 2.0 License</license>
+    <repo></repo>
+    <issue></issue>
+	<asset src="www/mPushNotification.js" target="js/mPushNotification.js"/>
+	<js-module src="www/mPushNotification.js" name="mPushNotification">
+        <clobbers target="mPushNotification" />
+		</js-module>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="mPushNotification" >
+                <param name="android-package" value="com.selfservit.util.mPushNotification"/>
+            </feature>
+        </config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			 <service android:name="com.selfservit.util.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.selfservit.util.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+		</config-file>
+		<source-file src="src/android/google-services.json" target-dir="." />
+		<source-file src="src/android/MyFirebaseMessagingService.java" target-dir="src/com/selfservit/util/" />
+		<source-file src="src/android/MyFirebaseInstanceIdService.java" target-dir="src/com/selfservit/util/" />
+		<source-file src="src/android/mPushNotification.java" target-dir="src/com/selfservit/util/" />
+		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+		<framework src="com.google.firebase:firebase-core:+" />
+		<framework src="com.google.firebase:firebase-messaging:+" />
+		<framework src="com.google.firebase:firebase-crash:+" />
+		<framework src="com.google.firebase:firebase-config:+" />
+	</platform>
+</plugin>
