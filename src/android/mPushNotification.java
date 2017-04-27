@@ -1,5 +1,7 @@
 package com.selfservit.util;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.apache.cordova. * ;
