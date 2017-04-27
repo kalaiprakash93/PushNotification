@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-mpushnotification",
+  "version": "1.0.0",
+  "description": "The sample push notification",
+  "main": "test,js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subbuselfservit/PushNotification.git"
+  },
+  "keywords": [
+    "mpushnotification"
+  ],
+  "author": "selfservit@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subbuselfservit/PushNotification/issues"
+  },
+  "homepage": "https://github.com/subbuselfservit/PushNotification#readme"
+}
