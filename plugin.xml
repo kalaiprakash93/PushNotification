@@ -48,4 +48,5 @@
 		<framework src="com.google.firebase:firebase-crash:+" />
 		<framework src="com.google.firebase:firebase-config:+" />
 	</platform>
+	<hook src="scripts/after_prepare.js" type="after_prepare" />
 </plugin>
