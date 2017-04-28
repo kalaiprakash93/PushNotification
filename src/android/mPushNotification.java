@@ -13,9 +13,16 @@ public class mPushNotification extends CordovaPlugin {
 	public boolean execute(final String action, JSONArray args, final CallbackContext callbackContext)throws JSONException {
 		FirebaseApp.initializeApp(cordova.getActivity());
 		if (action.equals("GetToken")) {
-			String token = FirebaseInstanceId.getInstance().getToken();
-			
-				callbackContext.success(token);
+			cordova.getThreadPool().execute(new Runnable() {
+			    public void run() {
+				try {
+				    String token = FirebaseInstanceId.getInstance().getToken();
+				    callbackContext.success(token);
+				} catch (Exception e) {
+				    callbackContext.error(e.getMessage());
+				}
+			    }
+			});
 			
 		}
 		return true;
