@@ -14,11 +14,9 @@ public class mPushNotification extends CordovaPlugin {
 		FirebaseApp.initializeApp(cordova.getActivity());
 		if (action.equals("GetToken")) {
 			String token = FirebaseInstanceId.getInstance().getToken();
-			if(token != null) {
+			
 				callbackContext.success(token);
-			}else{
-				callbackContext.error("Token not yet generated");
-			}
+			
 		}
 		return true;
 	}
