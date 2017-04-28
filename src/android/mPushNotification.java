@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class mPushNotification extends CordovaPlugin {
 	 @ Override
 	public boolean execute(final String action, JSONArray args, final CallbackContext callbackContext)throws JSONException {
-		/* START BACKGROUND SERVICE IF NOT RUNNING ALREADY */
+		FirebaseApp.initializeApp(this);
 		if (action.equals("GetToken")) {
 			String token = FirebaseInstanceId.getInstance().getToken();
 			if(!token.equals(null)) {
