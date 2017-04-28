@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-mpushnotification"
-    version="1.0.6">
+    version="1.0.7">
     <name>mPushNotification</name>
     <description>This plugin establishes the connection to the native interface and performs the requested task.</description>
     <author>selfservit@gmail.com</author>
@@ -43,6 +43,7 @@
 		<source-file src="src/android/MyFirebaseInstanceIdService.java" target-dir="src/com/selfservit/util/" />
 		<source-file src="src/android/mPushNotification.java" target-dir="src/com/selfservit/util/" />
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+	    	<framework src="com.google.gms.google-services" />
 		<framework src="com.google.firebase:firebase-core:+" />
 		<framework src="com.google.firebase:firebase-messaging:+" />
 		<framework src="com.google.firebase:firebase-crash:+" />
