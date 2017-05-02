@@ -18,7 +18,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="mPushNotification" >
-                <param name="android-package" value="com.selfservit.util.mPushNotification"/>
+                <param name="android-package" value="com.selfservit.notify.mPushNotification"/>
 		    <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -34,21 +34,21 @@
 			<uses-permission android:name="android.permission.WAKE_LOCK" />
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			 <service android:name="com.selfservit.util.MyFirebaseMessagingService">
+			 <service android:name="com.selfservit.notify.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-        <service android:name="com.selfservit.util.MyFirebaseInstanceIdService">
+        <service android:name="com.selfservit.notify.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 		</config-file>
 		<source-file src="src/android/google-services.json" target-dir="." />
-		<source-file src="src/android/MyFirebaseMessagingService.java" target-dir="src/com/selfservit/util/" />
-		<source-file src="src/android/MyFirebaseInstanceIdService.java" target-dir="src/com/selfservit/util/" />
-		<source-file src="src/android/mPushNotification.java" target-dir="src/com/selfservit/util/" />
+		<source-file src="src/android/MyFirebaseMessagingService.java" target-dir="src/com/selfservit/notify/" />
+		<source-file src="src/android/MyFirebaseInstanceIdService.java" target-dir="src/com/selfservit/notify/" />
+		<source-file src="src/android/mPushNotification.java" target-dir="src/com/selfservit/notify/" />
 	    	
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 		<framework src="com.google.firebase:firebase-core:+" />
