@@ -1,4 +1,4 @@
-package com.selfservit.util;
+package com.selfservit.notify;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
