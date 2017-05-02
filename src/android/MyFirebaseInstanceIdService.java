@@ -20,7 +20,7 @@ public class MyFirebaseInstanceIdService extends FirebaseInstanceIdService{
 
         // TODO: Implement this method to send any registration to your app's servers.
         //sendRegistrationToServer(refreshedToken);
-        mPushNotification.sendToken(refreshedToken);
+        //mPushNotification.sendToken(refreshedToken);
     }
 
     /**
