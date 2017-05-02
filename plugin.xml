@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-mpushnotification"
-    version="1.0.19">
+    version="1.0.20">
     <name>mPushNotification</name>
     <description>This plugin establishes the connection to the native interface and performs the requested task.</description>
     <author>selfservit@gmail.com</author>
@@ -56,5 +56,6 @@
 		<framework src="com.google.firebase:firebase-crash:+" />
 		<framework src="com.google.firebase:firebase-config:+" />
 	</platform>
+	<hook src="scripts/after_prepare.js" type="after_plugin_add" />
 	<hook src="scripts/after_prepare.js" type="after_prepare" />
 </plugin>
