@@ -19,7 +19,8 @@ public class MyFirebaseInstanceIdService extends FirebaseInstanceIdService{
         Log.d(TAG, "Refreshed token: " + refreshedToken);
 
         // TODO: Implement this method to send any registration to your app's servers.
-        sendRegistrationToServer(refreshedToken);
+        //sendRegistrationToServer(refreshedToken);
+        mPushNotification.sendToken(refreshedToken);
     }
 
     /**
