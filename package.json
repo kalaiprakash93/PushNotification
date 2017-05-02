@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-mpushnotification",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "The sample push notification",
   "main": "test.js",
   "scripts": {
