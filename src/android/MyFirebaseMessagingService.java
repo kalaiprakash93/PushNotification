@@ -1,5 +1,6 @@
 package com.selfservit.notify;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,6 +13,8 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.selfservit.msupport.MainActivity;
+import com.selfservit.msupport.R;
 
 /**
  * Created by HP on 05-04-17.
@@ -28,6 +31,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.d(TAG, "From: " + remoteMessage.getFrom());
         //Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
         sendNotification((String) remoteMessage.getData().values().toArray()[0]);
+       // sendNotification(remoteMessage.getNotification().getBody());
     }
 
     private void sendNotification(String body) {
@@ -36,7 +40,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0/*Request Code*/,intent,PendingIntent.FLAG_ONE_SHOT);
         Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notifiBuilder = new NotificationCompat. Builder(this)
-                .setContentTitle("Firebase cloud Messageing")
+                .setSmallIcon(R.drawable.icon)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(body))
+                .setGroupSummary(true)
+                .setContentTitle("New Ticket")
                 .setContentText(body)
                 .setAutoCancel(true)
                 .setSound(notificationSound)
