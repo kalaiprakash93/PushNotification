@@ -14,7 +14,6 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.selfservit.msupport.MainActivity;
-import com.selfservit.msupport.R;
 
 /**
  * Created by HP on 05-04-17.
@@ -40,7 +39,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0/*Request Code*/,intent,PendingIntent.FLAG_ONE_SHOT);
         Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notifiBuilder = new NotificationCompat. Builder(this)
-                .setSmallIcon(R.drawable.icon)
+                .setSmallIcon(getApplicationContext().getApplicationInfo().icon)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(body))
                 .setGroupSummary(true)
                 .setContentTitle("New Ticket")
