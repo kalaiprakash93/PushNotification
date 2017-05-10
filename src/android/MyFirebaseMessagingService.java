@@ -13,7 +13,6 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.selfservit.msupport.MainActivity;
 
 /**
  * Created by HP on 05-04-17.
